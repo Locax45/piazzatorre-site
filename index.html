@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Attività da svolgere a Piazzatorre</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    body{
+      margin:0;
+      font-family:'Segoe UI',sans-serif;
+      background:url('sfondo.jpg') center/cover fixed;
+      color:#fff;
+    }
+    .section{
+      display:none;
+      min-height:100vh;
+      background:rgba(0,0,0,.6);
+      padding:60px 20px;
+      text-align:center;
+    }
+    .active{display:block;}
+    h1{
+      font-size:2.6em;
+      color:#f7d774;
+      text-shadow:2px 2px 6px rgba(0,0,0,.7);
+      margin-bottom:30px;
+    }
+    ul{list-style:none;padding:0;margin:auto;max-width:800px;}
+    li{
+      margin:15px 0;
+      padding:10px 20px;
+      font-size:1.4em;
+      background:rgba(255,255,255,.1);
+      border:2px solid #f7d774;
+      border-radius:10px;
+      backdrop-filter:blur(4px);
+      display:flex;align-items:center;justify-content:center;gap:12px;
+    }
+    li img{width:35px;height:35px;border-radius:50%;}
+    a,span.link{color:#fff;text-decoration:none;cursor:pointer;}
+    a:hover,span.link:hover{text-decoration:underline;}
+    .desc{max-width:800px;margin:0 auto 25px;font-size:1.1em;line-height:1.5;}
+    .img-block img{max-width:90%;margin:18px auto;border:4px solid #f7d774;border-radius:10px;display:block;}
+    .btn{display:inline-block;margin-top:20px;padding:10px 24px;background:#f7d774;color:#333;font-weight:bold;border-radius:8px;text-decoration:none;}
+    .btn:hover{background:#ffe37f;}
+    .back{margin-top:35px;font-size:1.1em;color:#f7d774;cursor:pointer;text-decoration:underline;}
+    @media(max-width:600px){
+        h1{font-size:2em;}
+        li{font-size:1.1em;flex-direction:column;gap:8px;}
+    }
+  </style>
+</head>
+<body>
+  <!-- Home -->
+  <div id="home" class="section active">
+    <h1>🏔️ Attività da svolgere a Piazzatorre 🏔️</h1>
+    <ul>
+      <li><img src="gufo.png"><a href="https://www.trentunodi.it/parco-avventura-piazzatorre/" target="_blank">🌲 Parco Avventura 🌲</a><img src="gufo.png"></li>
+      <li><img src="lovebikepark.png"><a href="https://4tproject.com/lovebikepark" target="_blank">🚴 Lovebikepark 🚴</a><img src="lovebikepark.png"></li>
+      <li><a href="https://www.centrosportivopiazzatorre.com/" target="_blank">🏀 Centro Sportivo 🏀</a></li>
+      <li><a href="cartina.pdf" target="_blank">🥾 Escursioni nella Natura 🥾</a></li>
+      <li><span class="link" onclick="showPage('arrampicata')">🧗‍♂️ Arrampicata 🧗‍♂️</span></li>
+      <li><span class="link" onclick="showPage('ebike')">🚲 Noleggio E‑Bike 🚲</span></li>
+      <li><a href="https://www.hotellepinete.com/pattinaggio" target="_blank">⛸️ Palaghiaccio ⛸️</a></li>
+      <li><a href="https://www.piazzatorreskiarea.com/" target="_blank">⛷️ Piazzatorre Ski Area ⛷️</a></li>
+      <li><a href="eventi.pdf" target="_blank">🎉 Eventi 🎉</a></li>
+    </ul>
+  </div>
+
+  <!-- Arrampicata -->
+  <div id="arrampicata" class="section">
+    <h1>🧗‍♂️ Falesie di Piazzatorre 🧗‍♂️</h1>
+    <p class="desc">
+      In via Malicco e via Frassa, rispettivamente accanto alla chiesa e al campo sportivo, ti attende una sfida con la roccia.<br><br>
+      Che tu non abbia mai arrampicato o che tu sia un intenditore di prese e sicure, i nostri tracciati sapranno metterti di fronte ad ostacoli adeguati, da scalare appiglio dopo appiglio.
+    </p>
+    <div class="img-block">
+      <img src="falesia1.jpg" alt="Falesia Canal del Coren">
+      <img src="falesia2.jpg" alt="Falesia Bruno Tassi Very Camos">
+    </div>
+    <div class="back" onclick="showPage('home')">← Torna alla Home</div>
+  </div>
+
+  <!-- E-Bike -->
+  <div id="ebike" class="section">
+    <h1>🚲 Noleggio E‑Bike 🚲</h1>
+    <p class="desc">
+      Presso i portici di Via Centro, disponibile noleggio di Mountain Bike a pedalata assistita.<br><br>
+      Vivi una gita aggregante e socializzante: l'E‑bike riesce a tenere in gruppo persone con differente preparazione e diverse fasce d’età.<br><br>
+      Sfrutta la bici anche per tragitti che solitamente siamo abituati a fare con mezzi a motore, senza inquinare.
+    </p>
+    <div class="img-block">
+      <img src="ebike.jpg" alt="Escursione in E-Bike">
+    </div>
+    <a href="listino.jpg" target="_blank" class="btn">📄 Listino prezzi</a><br>
+    <div class="back" onclick="showPage('home')">← Torna alla Home</div>
+  </div>
+
+  <script>
+    function showPage(id){
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      window.scrollTo(0,0);
+    }
+  </script>
+</body>
+</html>
